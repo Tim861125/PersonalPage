@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
+import './App.css'
 export default function PersonalWebsite() {
   const [darkMode, setDarkMode] = useState(false);
 
