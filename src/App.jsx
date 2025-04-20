@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import './App.css'
+import './App.css';
+
 export default function PersonalWebsite() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -13,44 +14,59 @@ export default function PersonalWebsite() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 
+    <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
       
-    "bg-gray-900 text-white" : "bg-white text-gray-900"} 
-    flex flex-col justify-center items-center p-6`}>
+      {/* 主體內容區塊 */}
+      <div className="main-content">
+        
+        {/* 左邊：個人資訊 */}
+        <div className="left-section">
+          <img
+            src="vite.svg"
+            alt="Profile"
+            className="profile-image"
+          />
+          <h1 className="name">Tim Ding</h1>
+          <p className="title">軟體開發者 | 技術愛好者</p>
+          <p className="intro">
+            Hi there! Welcome to my personal webpage.<br />
+            I'm passionate about web application development and always eager to learn new technologies.
+          </p>
 
-      {/* 內容區塊 */}
-      <div className="max-w-lg text-center mt-10">
-        <img
-          src="/vite.svg"
-          alt="Profile"
-          className="w-32 h-32 rounded-full mx-auto border-4 border-gray-300"
-        />
-        <h1 className="text-3xl font-bold mt-4">你的名字</h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300">軟體開發者 | 技術愛好者</p>
-        <p className="mt-4 text-gray-700 dark:text-gray-300">
-          你好！這是我的個人網頁。我熱衷於開發 Web 應用程式，並樂於學習新技術。
-        </p>
-      </div>
+          <div className="social-links">
+            <a href="https://github.com/tim861125" target="_blank" rel="noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer">
+              <FaLinkedin />
+            </a>
+            <a href="mailto:your.email@example.com">
+              <FaEnvelope />
+            </a>
+          </div>
+        </div>
 
-      {/* 社交媒體連結 */}
-      <div className="flex space-x-6 mt-6">
-        <a
-          href="https://github.com/yourgithub"
-          target="_blank"
-          className="text-2xl text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white"
-        >
-          <FaGithub />
-        </a>  
-        <a
-          href="https://linkedin.com/in/yourlinkedin"
-          target="_blank"
-          className="text-2xl text-blue-700 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-600"
-        >
-          <FaLinkedin />
-        </a>
-        <a href="mailto:your.email@example.com" className="text-2xl text-red-500 hover:text-red-700">
-          <FaEnvelope />
-        </a>
+        {/* 右邊：履歷與工作經歷 */}
+        <div className="right-section">
+          <h2>履歷</h2>
+          <a href="/Tim_Ding_Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">
+            點我下載我的履歷（PDF）
+          </a>
+
+          <h2>工作經驗</h2>
+          <ul className="experience-list">
+            <li>
+              <strong>軟體工程師 - ABC 科技公司</strong><br />
+              2022/07 - 至今<br />
+              負責企業內部系統的前端開發與維護，並協助推動 React 技術導入。
+            </li>
+            <li>
+              <strong>前端實習生 - XYZ 新創公司</strong><br />
+              2021/02 - 2022/06<br />
+              使用 Vue.js 協助開發行動裝置電商網站，與設計師協作改善使用者體驗。
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
