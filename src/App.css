@@ -1,124 +1,42 @@
-/* 整體頁面容器 */
-.page-container {
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 2rem;
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #fff;
-  min-height: 100vh;
+  text-align: center;
 }
 
-/* 深色模式 */
-.dark-mode {
-  background-color: #1a202c;
-  color: #f0f0f0;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* 主內容區域：左右區塊 */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 100%;
-  margin: 2rem;
-}
-
-@media (min-width: 768px) {
-  .main-content {
-    flex-direction: row;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-/* 左邊個人區塊 */
-.left-section {
-  flex: 1;
-  text-align: center;
-  padding: 1rem; /* ✅ 可加可不加，看你要不要邊距 */
-  background-color: #f9f9f9; /* ✅ 可加背景色做視覺區隔 */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.profile-image {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 4px solid #ccc;
+.card {
+  padding: 2em;
 }
 
-.name {
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.title {
-  font-size: 18px;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-.intro {
-  margin-top: 1rem;
-  line-height: 1.6;
-  color: inherit;
-}
-
-/* 社交連結 */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  font-size: 24px;
-}
-
-.social-links a {
-  color: inherit;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #007bff;
-}
-
-/* 右邊履歷與經驗區塊 */
-.right-section {
-  flex: 1;
-  text-align: center;
-  padding: 1rem; /* ✅ 可加可不加，看你要不要邊距 */
-  background-color: #f9f9f9; /* ✅ 可加背景色做視覺區隔 */
-}
-
-.right-section h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.resume-link {
-  color: #0066cc;
-  text-decoration: underline;
-}
-
-.resume-link:hover {
-  opacity: 0.8;
-}
-
-.experience-list {
-  margin-top: 1rem;
-  padding-left: 1.25rem;
-}
-
-.experience-list li {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-/* 深色模式額外處理 */
-.dark-mode .title,
-.dark-mode .intro,
-.dark-mode .experience-list {
-  color: #ccc;
-}
-
-.dark-mode .resume-link {
-  color: #66bfff;
+.read-the-docs {
+  color: #888;
 }
